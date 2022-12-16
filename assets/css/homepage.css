@@ -1,0 +1,34 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700");
+
+// Colors
+$navbar-white: #fafafa;
+$navbar-black: #131313;
+$navbar-active-color: #fafafa;
+$navbar-bg-active-color: #ff9900;
+$bg-light-blue: #00c6ff;
+$bg-dark-blue: #0072ff;
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+}
+body {
+  font-family: "Open Sans", sans-serif;
+  background: #e0e0e0;
+}
+.jumbo {
+  padding-top: 100px;
+  min-height: 200vh;
+}
+
+// On Shrink
+.shrink {
+  .navbar {
+    color: $navbar-white;
+    background: $bg-light-blue;
+    background: -webkit-linear-gradient(55deg,$bg-light-blue 10%,$bg-dark-blue 90%);
+    background: linear-gradient(35deg,$bg-light-blue 10%,$bg-dark-blue 90%);
+  }
+}

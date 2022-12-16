@@ -1,0 +1,27 @@
+{% extends 'global-html.html' %}
+
+{% block content %}
+{% load static %}
+<section class="u-clearfix u-gradient u-section-2" id="sec-0ac7">
+    <div class="u-clearfix u-sheet u-sheet-1">
+        {% for user in profiles %}
+            {% if user.id != request.user.id %}
+                <div class="u-container-style u-expanded-width-sm u-expanded-width-xs u-group u-palette-1-dark-2 u-radius-30 u-shape-round u-group-1"
+                     data-href="{% url 'chat' user.id %}">
+                    <div class="u-container-layout u-valign-bottom-lg u-valign-bottom-md u-valign-bottom-xl u-valign-top-sm u-container-layout-1">
+                        <img class="u-image u-image-contain u-image-round u-preserve-proportions u-radius-50 u-image-1"
+                             src="{% static 'images/240_F_229758328_7x8jwCwjtBMmC6rgFzLFhZoEpLobB6L8.jpg' %}" alt="" data-image-width="240"
+                             data-image-height="240">
+                        <h2 class="u-subtitle u-text u-text-1">Username: {{ user.username }}</h2>
+                        <p class="u-text u-text-2">First Name: {{ user.first_name }}</p>
+                        <p class="u-text u-text-3">Last Name: {{ user.last_name }}</p>
+                        <p class="u-text u-text-4">Email: {{ user.email }}</p>
+                        <p class="u-align-right u-text u-text-5">Member since - {{ user.date_joined }}</p>
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+</section>
+
+{% endblock %}

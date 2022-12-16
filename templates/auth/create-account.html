@@ -1,0 +1,41 @@
+{% extends 'global-html.html' %}
+
+{% block content %}
+<section class="u-clearfix u-gradient u-section-5" id="sec-2a4f">
+    <div class="u-clearfix u-sheet u-sheet-1">
+        <div class="u-expanded-width-sm u-expanded-width-xs u-form u-login-control u-form-1">
+            <form enctype="multipart/form-data" method="post" action="{% url 'sign-up' %}">
+                {% csrf_token %}
+                <div class="u-form-group u-form-name u-label-top">
+                    <label for="username-a30d" class="u-label u-text-grey-30 u-label-1">Username *</label>
+                    {{ form.username }}
+                </div>
+                <div class="u-form-group u-form-name u-label-top u-form-group-2">
+                    <label for="name-b654" class="u-label u-text-grey-30 u-label-2">First Name *</label>
+                    {{ form.first_name }}
+                </div>
+                <div class="u-form-group u-form-name u-label-top u-form-group-3">
+                    <label for="name-0d1e" class="u-label u-text-grey-30 u-label-3">Last Name *</label>
+                    {{ form.last_name }}
+                </div>
+                <div class="u-form-email u-form-group u-label-top u-form-group-4">
+                    <label for="email-4a25" class="u-label u-text-grey-30 u-label-4">Email</label>
+                    {{ form.email }}
+                </div>
+                <div class="u-form-group u-form-password u-label-top">
+                    <label for="password-a30d" class="u-label u-text-grey-30 u-label-5">Password *</label>
+                    {{ form.password }}
+                </div>
+                <div class="u-align-center u-form-group u-form-submit u-label-top">
+                    <input type="submit" value="submit" class="u-form-control-hidden">
+                    <a href="#"
+                       class="u-active-palette-1-base u-border-none u-btn u-btn-round u-btn-submit u-button-style u-hover-palette-1-dark-1 u-palette-1-dark-2 u-radius-50 u-btn-1">Sign
+                        up<br>
+                    </a>
+                </div>
+                <input type="hidden" value="" name="recaptchaResponse">
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock %}
