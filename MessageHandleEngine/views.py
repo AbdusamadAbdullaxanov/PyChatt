@@ -35,11 +35,13 @@ def chat_with_friend(request, pk):
         form = TestForm(request.POST)
         if form.is_valid():
             message = form.cleaned_data["message"]
-            MessagesModel(message=message, user_id=request.user.id, user_to_id=pk, username=request.user.username).save()
+            MessagesModel(message=message, user_id=request.user.id, user_to_id=pk,
+                          username=request.user.username).save()
             return redirect("chat", pk)
     else:
         form = TestForm()
-    return render(request, "messages/private-chat.html", {"request": request, "form": form, "messages": messages, "pk": pk})
+    return render(request, "messages/private-chat.html",
+                  {"request": request, "form": form, "messages": messages, "pk": pk})
 
 
 def user_info(request, pk):
